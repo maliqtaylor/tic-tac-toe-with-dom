@@ -22,5 +22,17 @@ div {
 
 button{
     border-radius: 10%;
-    margin: 25px;
+    margin: 75px;
+}
+
+.x{
+    border-color: red;
+    background-color:aliceblue;
+    color: red;
+}
+
+.o{
+    border-color: dodgerblue;
+    background-color: aliceblue;
+    color: dodgerblue;
 }
