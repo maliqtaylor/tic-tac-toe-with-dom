@@ -5,15 +5,12 @@ const game = {
     message: `Click on a square to start the game!`,
 }
 /*------------------------ Cached Element References ------------------------*/
-// You might choose to put your game status here
 let board = document.querySelector('.board')
 let message = document.querySelector('#message')
 let reset = document.querySelector('#reset')
 /*---------------------------- Variables (state) ----------------------------*/
 let allSquares = listToMatrix(board.children, 3)
 /*----------------------------- Event Listeners -----------------------------*/
-// This is where you should put the event listener
-// for a mouse-click
 board.addEventListener('click', (e) => game.addUserPick(e))
 
 reset.addEventListener('click', resetBoard)
@@ -23,14 +20,13 @@ game.addUserPick = function (e) {
 
     let square = e.target;
 
-
     if (!square.innerText) {
         square.innerText = this.player
         this.checkWinnerHz()
         this.checkWinnerVt()
         this.checkWinnerDg()
         this.displayWinner()
-        square.className += this.player.toLocaleLowerCase()
+        square.className += " " + this.player.toLocaleLowerCase()
         if (this.winner) return
         this.toggleUser()
     }
@@ -87,15 +83,18 @@ game.checkWinnerDg = function () {
 }
 
 game.displayWinner = function () {
-    if (this.winner === true) this.message = `Player ${this.player} Wins !`
-    message.innerText = this.message
+    if (this.winner === true) {
+        this.message = `Player ${this.player} Wins !`
+        confetti.start(1500);
+        message.innerText = this.message
+    }
 }
 
 function resetBoard() {
     for (let row of allSquares) {
         for (let square of row) {
             square.innerText = ''
-            square.className = ''
+            square.className = 'square'
         }
     }
     game.player = 'X'

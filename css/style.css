@@ -6,6 +6,15 @@ body {
     align-items: center;
 }
 
+h6{
+    padding: 15px;
+}
+
+h2{
+    padding: 20px;
+}
+
+
 section.board {
     display: grid;
     grid-template-rows: repeat(3, 10vmin);
@@ -13,16 +22,12 @@ section.board {
     grid-gap: 5px;
 }
 
-div {
+.square {
     border: 3px solid black;
     font-size: 8vmin;
-    text-align: center;
-    vertical-align: middle;
-}
-
-button{
-    border-radius: 10%;
-    margin: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .x{
@@ -36,3 +41,13 @@ button{
     background-color: aliceblue;
     color: dodgerblue;
 }
+
+#reset{
+    margin-top: 5%
+}
+
+#ruleBtn{
+    margin-bottom: 5px;
+}
+
+

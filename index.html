@@ -5,28 +5,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
+    <script defer src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/gh/mathusummut/confetti.js/confetti.min.js"></script>
     <script defer src="js/app.js"></script>
     <title>Tic Tac Toe</title>
 </head>
 
 <body>
-    <h1>Tic-Tac-Toe</h1>
-    <h2 id="message"></h2>
+    <h2>Tic-Tac-Toe</h2>
+
+
+
+    <button id="ruleBtn" class="btn btn-primary" type="button" data-toggle="collapse" data-target="#rules"
+        aria-expanded="false" aria-controls="rules">
+        Rules
+    </button>
+
+    <div class="collapse" id="rules">
+        <div class="card card-body">
+            <ul>
+                <li> The game is played on a grid that's 3 squares by 3 squares.</li>
+
+                <li> There are two players. (X and O). Players take turns putting their marks in empty squares.</li>
+
+                <li> The first player to get 3 marks in a row (up, down, across, or diagonally) is the winner.</li>
+
+                <li> When all 9 squares are full, the game is over. If no player has 3 marks in a row, the game ends in
+                    a tie.</li>
+            </ul>
+        </div>
+    </div>
+
+    <h6 id="message"></h6>
 
     <section class="board">
-        <div id="sq0"></div>
-        <div id="sq1"></div>
-        <div id="sq2"></div>
-        <div id="sq3"></div>
-        <div id="sq4"></div>
-        <div id="sq5"></div>
-        <div id="sq6"></div>
-        <div id="sq7"></div>
-        <div id="sq8"></div>
+        <div class="square" id="sq0"></div>
+        <div class="square" id="sq1"></div>
+        <div class="square" id="sq2"></div>
+        <div class="square" id="sq3"></div>
+        <div class="square" id="sq4"></div>
+        <div class="square" id="sq5"></div>
+        <div class="square" id="sq6"></div>
+        <div class="square" id="sq7"></div>
+        <div class="square" id="sq8"></div>
     </section>
 
-    <button id="reset">Restart Game</button>
+    <button id="reset" class="btn btn-secondary">Restart Game</button>
 </body>
 
 </html>
